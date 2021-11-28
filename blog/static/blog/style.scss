@@ -1,0 +1,56 @@
+$a-tags: 'a, a:visited';
+
+h2 {
+    color: red;
+}
+
+body {
+    background-color: rgb(230, 236, 230);
+}
+
+
+header {
+    border-bottom: 1px solid #999;
+    margin-bottom: 2rem;
+    display: flex;
+
+    h1 {
+        a {
+            color: red;
+            text-decoration: none;
+        }
+    }
+}
+
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    display: flex;
+    padding-top: 2rem;
+}
+
+.post-entry {
+    margin-bottom: 2rem;
+
+    h2 {
+        margin: 0.5reem 0;
+
+        a{
+            &:hover {
+                color: red;
+            }
+        }
+
+        #{$a-tags} {
+            color: blue;
+            text-decoration: none;
+        }
+    }
+
+    p {
+        margin: 0;
+        font-weight: 400;
+    }
+}
