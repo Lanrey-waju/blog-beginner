@@ -1,10 +1,21 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in object_list %}
-        <div class="post-entry">
-            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.body }}</p>
-        </div>
-    {% endfor %}
+    {% if user.is_authenticated %}
+        Hi, {{user.username}}
+        <p><a href="{% url 'logout' %}">Logout</a></p>
+    {% else %}
+        You are not logged in.
+        <a href="{% url 'login' %}">Log In</a>
+        <p>Don't have an account? </p>
+        <p><a href="{% url 'signup' %}">Sign Up</a></p>
+    {% endif %}
+    {% if user.is_authenticated %}
+        {% for post in object_list %}
+            <div class="post-entry">
+                <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+                <p>{{ post.body }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
 {% endblock content %}
