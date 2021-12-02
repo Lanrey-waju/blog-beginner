@@ -8,6 +8,7 @@ django = "==3.2.9"
 django-debug-toolbar = "*"
 gunicorn = "*"
 python-decouple = "*"
+whitenoise = "*"
 
 [dev-packages]
 
