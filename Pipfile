@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django = "==3.2.9"
 django-debug-toolbar = "*"
+gunicorn = "*"
+python-decouple = "*"
 
 [dev-packages]
 
